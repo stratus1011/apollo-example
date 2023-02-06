@@ -1,0 +1,20 @@
+query Feature1ServiceAQuery {
+    computers {
+        id
+        ... on Computer {
+            cpu
+            year
+            releaseDate
+            ...ScreenFragment
+        }
+    }
+}
+
+fragment ScreenFragment on Computer{
+    screen {
+        resolution
+        ... on Screen {
+            isColor
+        }
+    }
+}
